@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "Personal";
+}
+
+<nav aria-label="breadcrumb" role="navigation">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="~/Home">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Doctor Sign-Up</li>
+    </ol>
+</nav>
+
+
+@using (Html.BeginForm("enterData", "Doctor", FormMethod.Post, new { @class = "form-enterPersonal" }))
+{
+    <h2 class="form-enterPersonal-heading">Please Enter Personal Info</h2><br/>
+    <p>First Name <br />
+        <label for="inputFirst" class="sr-only">First</label>
+        @Html.TextBox("First Name", "", new { type = "FirstName", id = "inputFirstName", @class = "form-control", placeholder = "First Name", required = true, autofocus = true })
+    </p>
+    <p>Last Name <br />
+        <label for="inputLast" class="sr-only">Last</label>
+        @Html.TextBox("Last Name", "", new { type = "LastName", id = "inputLastName", @class = "form-control", placeholder = "Last Name", required = true, autofocus = true })
+    </p>
+    <p>
+        Phone Number <br />
+        <label for="inputFirst" class="sr-only">First</label>
+        @Html.TextBox("Phone Number", "", new { type = "phoneNumber", id = "inputPhoneNumber", @class = "form-control", placeholder = "Phone Number", required = true, autofocus = true })
+    </p>
+    <p>
+        Email <br />
+        <label for="inputLast" class="sr-only">Last</label>
+        @Html.TextBox("Email", "", new { type = "Email", id = "inputEmail", @class = "form-control", placeholder = "Email", required = true, autofocus = true })
+    </p><br/>
+
+    <p><a class="btn btn-primary" href="~/Doctor/License">Submit and Continue</a></p>
+}
